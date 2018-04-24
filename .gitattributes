@@ -1,0 +1,1 @@
+docs/3/design.psd filter=lfs diff=lfs merge=lfs -text
