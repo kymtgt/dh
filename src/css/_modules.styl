@@ -3,14 +3,31 @@
   text-decoration none
   border 1px solid primary
   border-radius 8px
+  background white
   color primary
+  font-weight bold
   line-height 1.5em
   padding 9px 1.25em
   box-shadow rgba(0,0,0,.3) 0 2px 2px
-  &.primary
+  box-sizing border-box
+  cursor pointer
+  transition-property all
+  transition-duration .2s
+  &:hover, &:focus, &:active
+    background smoke
+    box-shadow rgba(0,0,0,.3) 0 2px 6px
+    outline none
+  &.btn-primary
     background primary
+    border-color transparent
     color white
-
+    &:hover, &:focus, &:active
+      background lighten(primary, 5%)
+  &.btn-block
+    display block
+    width 100%
+  &.btn-lg
+    font-size 1.5em
 
 .fr
   float right
@@ -22,18 +39,21 @@
   clearfix()  
 
 .section-heading
-  padding-top 160px
+  padding-top-large()
   text-align center
-  margin-bottom: calc(40px - .25em)
+  margin-bottom: 1em
 
 .content
+  width 90%
   max-width 1064px
   box-sizing border-box
-  padding-right 32px
-  padding-left 32px
+  padding-right 2em
+  padding-left 2em
   margin-right auto
   margin-left auto
   position relative
+  +tablet-under()
+    width 100%
 
 .narrow-content
   width: 64%
@@ -41,6 +61,8 @@
   margin-right auto
   margin-left auto
   position relative
+  +sp-only()
+    width 100%
 
 .m1
   margin-em(1em)
@@ -56,5 +78,24 @@
 
 .m4
   margin-em(5em)
+
 .text-center
   text-align center
+.text-right
+  text-align right
+
+.pc-only
+  +tablet-under()
+    display none !important
+.tablet-under
+  +pc-only()
+    display none !important
+.sp-only
+  +pc-only()
+    display none !important
+  +tablet-only()
+    display none !important
+.tablet-only
+  display none
+  +tablet-only()
+    display block !important

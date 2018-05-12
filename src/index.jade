@@ -1,26 +1,25 @@
-header.g-nav
+header#header.g-nav
   nav.fl
-    a.g-nav-link(href="#top")
-      != partial("_logo_fill", {klass: "g-nav-logo"})
+    a.g-nav-logo(href="#top")
+      != partial("_logo_fill", {klass: ""})
     a.g-nav-link(href="#about") &Aring;reについて
     a.g-nav-link(href="#guidelines") 募集要項
     a.g-nav-link(href="#spec") 仕様・設備
     a.g-nav-link(href="#steps") 実施までの流れ
     a.g-nav-link(href="#example") 開催事例
   nav.fr
-    a.btn.primary(href="#contact") お問い合わせ
+    a.btn-cta.btn.btn-primary(href="#contact") お問い合わせ
 
 
-.hero
+#hero
   .hero-inner
     h1
-      | 渋谷のクリエイティブの中心地で
-      br
-      | ワークショップを開催しませんか？
+      .ib 渋谷のクリエイティブの中心地で
+      .ib ワークショップを開催しませんか？
     img(src="./img/are_weekday_workshop.png" alt="Are Weekday Workshop" width="385")
     p
       | 渋谷のクリエイティビティの発信地、渋谷キャスト。
-      br
+      br.pc-only
       | その一角であるカフェ「Åre（オーレ）」では、少人数制のワークショップ講師を募集しています。
 
 
@@ -34,42 +33,45 @@ section#about
       br
       | 願いが込められています。
 
-  .about-feature
-    figure.about-feature-image
-      img(src="./img/image_shop1.jpg" alt="店舗の様子")
-    figure.about-feature-image
-      img(src="./img/image_shop2.jpg" alt="店舗の様子")
-    figure.about-feature-image
-      img(src="./img/image_shop3.jpg" alt="店舗の様子")
+  .about-feature-wrapper
+    .about-feature-slide
+      figure.about-feature
+        img(src="./img/image_shop1.jpg" alt="店舗の様子")
+      figure.about-feature
+        img(src="./img/image_shop2.jpg" alt="店舗の様子")
+      figure.about-feature
+        img(src="./img/image_shop3.jpg" alt="店舗の様子")
 
-  .content
-    iframe(width="100%" height="400" style="background:#999")
-    .access-info
-      p.m2
-        strong 渋谷駅13番出口より徒歩1分 
-      dl
-        dt 住所
-        dd
-          | 東京都渋谷区1-23-21　SHIBUYA CAST. 1階
-          br
-          a(href="#") &gt; Google Mapでみる
-      dl
-        dt TEL
-        dd
-          a(href="tel:0364341129") 03-6434-1129
-      dl
-        dt 営業時間
-        dd 8:00 〜 22:00
+  #access
+    #mapSP
+    .content
+      #mapPC
+      .access-info
+        p.m2
+          strong 渋谷駅13番出口より徒歩1分 
+        dl
+          dt 住所
+          dd
+            | 東京都渋谷区1-23-21　SHIBUYA CAST. 1階
+            br
+            a(href="#") &gt; Google Mapでみる
+        dl
+          dt TEL
+          dd
+            a(href="tel:0364341129") 03-6434-1129
+        dl
+          dt 営業時間
+          dd 8:00 〜 22:00
 
-      .m2
-        a.icon-sns(href="")
-          img(src="./img/icon_fb.png" alt="facebook")
-        | 　
-        a.icon-sns(href="")
-          img(src="./img/icon_ig.png" alt="instagram")
-        | 　
-        a.icon-sns(href="")
-          img(src="./img/icon_cast.png" alt="shibuya cast")
+        .m2
+          a.icon-sns(href="")
+            img(src="./img/icon_fb.png" alt="facebook")
+          | 　
+          a.icon-sns(href="")
+            img(src="./img/icon_ig.png" alt="instagram")
+          | 　
+          a.icon-sns(href="")
+            img(src="./img/icon_cast.png" alt="shibuya cast")
 
 #smoke
   section#guidelines.content.clearfix
@@ -91,7 +93,6 @@ section#about
     figure.table-figure.fr(style="background-image:url(./img/image_guidelines.jpg)")
 
   section#spec.content.clearfix
-    figure.table-figure.fl(style="background-image:url(./img/image_spec.jpg)")
     .narrow-content.fr
       h2.section-heading 仕様・設備
       table
@@ -109,7 +110,7 @@ section#about
         tr
           th 注意事項
           td 隣で通常営業を行っておりますので、音・光・匂いが出る、火を扱う、などの内容に関しては事前にご相談ください
-
+    figure.table-figure.fl(style="background-image:url(./img/image_spec.jpg)")
 
 section#steps
   .content
@@ -136,11 +137,10 @@ section#steps
         h3 お支払い
         p 当日参加者の方から個別にお支払いいただくか、まとめて講師へご請求か、お選びいただけます。
 
-
 section#example
   .content
     h2.section-heading これまでの開催事例
-    .col-wrapper
+    .col-wrapper.ex-wrapper
       .col
         figure.ex-figure(style="background-image:url(./img/image_example.jpg)")
           figcaption
@@ -176,9 +176,8 @@ section#example
           .input
             textarea(name="content" placeholder="利用目的（ワークショップ内容）、開催予定時期などお決まりでしたらご記入ください")
         .contact-row.text-center
-          button.btn(type="button" style="font-size:1.5em") 送信内容を確認
-
-
-
+          button.btn.btn-lg(type="button") 送信内容を確認
+      .m4.text-center.sp-only
+        a(href="#top" style="color:white") ▲ Back to top
   footer#footer.content
     small &copy; &Aring;re

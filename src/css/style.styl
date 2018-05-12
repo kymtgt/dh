@@ -1,39 +1,64 @@
-white = #fff
-primary = #707e87
-black = #1b1e20
-light = #d5dadc
-smoke = #f1f3f4
-
+@import url('https://fonts.googleapis.com/css?family=Cabin:600')
+@import '_valiables'
 @import '_mixins'
 @import '_base'
 @import '_modules'
 
 .g-nav
   background white
-  padding 22px 32px
+  padding 22px 2em
   position fixed
   width 100%
   box-sizing border-box
-  box-shadow rgba(0,0,0,.5) 0 4px 8px
   top 0
   left 0
   z-index 100
+  box-shadow rgba(0,0,0,.5) 0 4px 8px
+  transition-property all
+  transition-duration .3s
+  +sp-only()
+    padding: 10px 15px 
+    transition-property all
+    transition-duration .3s
+    transform translateY(-100%)
+    &.on
+      transform translateY(0%)
+  .btn-cta
+    +sp-only()
+      font-size 11px
+      padding-top 5px
+      padding-bottom 5px
+      border-radius 3px
 .g-nav-link
   line-height 44px
   text-decoration none
   vertical-align top
-  margin-right 2em
+  +sp-only()
+    display none
+  + .g-nav-link
+    margin-left 2em
+    +tablet-only()
+      margin-left 1.25em
 
 .g-nav-logo
-  fill primary
-  width 71px
+  margin-right 2em
+  +tablet-only()
+    display none
+  > svg
+    fill primary
+    height 44px
+    vertical-align top
+    +sp-only()
+      height 28px
 
-.hero
+#hero
   background url(../img/hero.jpg) no-repeat center center
   background-size cover
   width 100%
   height 960px
   position relative
+  +sp-only()
+    height 720px
 
 .hero-inner
   max-width 90%
@@ -47,38 +72,66 @@ smoke = #f1f3f4
   z-index 2
   text-shadow: rgba(0,0,0,.3) 0 0 5px
   > h1
-    font-size 32px
-    line-height 42px
-    margin-bottom 40px
+    font-size 2em
+    line-height (42/32)
+    margin-bottom (40em/32)
     letter-spacing .13em
   > p
-    font-size 20px
-    line-height 36px
-    margin-top: 40px
-
+    font-size (20/16)em
+    line-height (36/20)
+    margin-top: (40em/20)
+    +tablet-under()
+      text-align left
+      
 
 #about
   background url(../img/bg_about.png) no-repeat right top
+  background-size (982px/2) auto
+  +tablet-under()
+    background-size (982px/4) auto
 
 .about-lead
   margin-em(2.5em)
-.about-feature
+.about-feature-wrapper
   width 100%
   position relative
-  margin-bottom 40px
+  margin-bottom 2.5em
   clearfix()
+  +sp-only()
+    overflow hidden
+    margin-bottom 0
+.about-feature-slide
+  +sp-only()
+    width 300%
 
-.about-feature-image
+.about-feature
   width 33.333%
   float left
+
++sp-only()
+  #access
+    text-align center
+
+#mapPC, #mapSP
+  width 100%
+  height 25em
+  background smoke
+#mapPC
+  +sp-only()
+    display none !important
+#mapSP
+  display none
+  +sp-only()
+    display block
 
 .access-info
   position absolute
   z-index 2
   background rgba(255,255,255,.8)
   padding 0 1.5em
-  top 46px
-  left 48px
+  top 50%
+  left 3em
+  transform translateY(-50%)
   > dl
     margin-em(2em)
     clearfix()
@@ -86,18 +139,30 @@ smoke = #f1f3f4
       float left
     > dt
       width 5em
+  +sp-only()
+    display inline-block
+    position static
+    transform none
+    background none
+    padding 0 0 !important
+    > dl
+      text-align left
+    
 .icon-sns
   display inline-block
   vertical-align top
   > img
-    height 40px
+    height 2.5em
 
 #smoke
   position relative
   background smoke url(../img/bg_guidelines.png) no-repeat left 80px
   background-size 400px auto
-  margin-top 160px
-  padding-bottom 160px
+  +tablet-under()
+    background-size 200px auto
+    background-position left 40px
+  margin-top-large()
+  padding-bottom-large()
   &:before
     content ''
     display block
@@ -112,18 +177,31 @@ smoke = #f1f3f4
     border-left 50vw solid white
 
 .table-figure
-  width 220px
-  height 220px
+  width 22%
+  padding-top 22%
   background no-repeat center center
   background-size cover
   position absolute
+  height 0
   bottom 0
   &.fr
     right 32px
   &.fl
     left 32px
-  
+  +sp-only()
+    width 100%
+    height 15em
+    padding-top 0
+    margin-top 2em
+    position static
 
+.contact-link
+  display none
+  +sp-only()
+    display block
+    text-align center
+    margin-top 5em
+ 
 #steps
   position relative
   &:before
@@ -145,20 +223,20 @@ smoke = #f1f3f4
 .step
   position relative
   padding-top 1.5em
-  padding-left 54px
+  padding-left 3.5em
   margin-top 2em
   &:before
     counter-increment steps
     content counter(steps)
     display block
     position absolute
-    font-size 35px
-    font-family 'Helvetica Neue', Helvetica, Arial
+    font-size 2.25em
+    font-family: 'Cabin', Arial, sans-serif
     font-weight bold
-    left 20px
+    left 0
     top 1em
     color primary
-    width 20px
+    width (3.5em/2.25)
     text-align center
     line-height 1
     z-index 2
@@ -174,24 +252,28 @@ smoke = #f1f3f4
   position absolute
   left 0
   top 0
-  width 130px
+  width (130em/16)
 
 #example
   position relative
   background url(../img/bg_example.png) no-repeat right bottom
   background-size 258px auto
-  padding-bottom 160px
+  +tablet-under()
+    background-size (258px/2) auto
+  padding-bottom-large()
 
-.col-wrapper
-  margin-left -20px
-  margin-right -20px
-  clearfix()
-.col
-  width 50%
-  padding-left 20px
-  padding-right 20px
-  box-sizing border-box
-  float left
++pc-only()
+  .col-wrapper
+    margin-left -20px
+    margin-right -20px
+    margin-bottom -1.5em
+    clearfix()
+  .col
+    width 50%
+    padding-left 20px
+    padding-right 20px
+    box-sizing border-box
+    float left
 
 .ex-figure
   display block
@@ -201,6 +283,7 @@ smoke = #f1f3f4
   position relative
   overflow hidden
   padding-bottom (36000/480)%
+  margin-bottom 1.5em
   > figcaption
     position absolute
     bottom 0
@@ -213,12 +296,17 @@ smoke = #f1f3f4
   position relative
   background primary url(../img/bg_footer.png) no-repeat right bottom
   background-size 494px auto
+  +tablet-under()
+    background-size (494px/2) auto
   color white
 
 #contact
   position relative
   background url(../img/bg_contact.png) no-repeat left top
   background-size auto 72px
+  +tablet-under()
+    background-size auto (72px/2)
+    background-position (-1958px/8) 0
 
 .contact-row
   margin-top 2em
@@ -228,12 +316,17 @@ smoke = #f1f3f4
 .label
   float left
   font-weight bold
-  line-height 48px
+  line-height 3em
   text-align right
   width 8em
   padding-right 2em
+  +sp-only()
+    float none
+    text-align left
 .input
   padding-left 10em
+  +sp-only()
+    padding-left 0
   > input, > textarea
     width 100%
   > textarea
@@ -243,5 +336,5 @@ smoke = #f1f3f4
   border-top 4px solid white
   text-align center
   padding: 5em 0
-  margin-top 10em
+  margin-top-large()
   
