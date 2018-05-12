@@ -38,6 +38,12 @@
 .clearfix
   clearfix()  
 
+.ib
+  display inline-block
+
+.pointer
+  cursor pointer
+
 .section-heading
   padding-top-large()
   text-align center
@@ -53,7 +59,8 @@
   margin-left auto
   position relative
   +tablet-under()
-    width 100%
+    padding-right 0
+    padding-left 0
 
 .narrow-content
   width: 64%
@@ -99,3 +106,5 @@
   display none
   +tablet-only()
     display block !important
+
+@import '_swiper'

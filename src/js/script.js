@@ -170,10 +170,45 @@ function toggleNav() {
     $gNav.removeClass("on")
   }
 }
+function setSwiper() {
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: false,
+    },
+  });
+}
+function showModal() {
+  var validation = true;
+  $("#contact [name]").each(function(){
+    var $this = $(this)
+    var val = $this.val();
+    if(val.length <= 0){
+      var label = $this.closest(".contact-row").find(".label").text();
+      alert(label + "を入力してください");
+      validation = false;
+      return false
+    }
+    var name = $this.attr("name");
+    $("#confirm [name='" + name + "']").val(val);
+  });
+  if(validation){
+    $(".modal-cover").fadeIn(300)
+  } else {
+    return false;
+  }
+}
+function hideModal() {
+  $(".modal-cover").fadeOut(200)
+}
 
 var $hero,$w,$gNav
 
 function init() {
   smoothScroll();
   setOnScroll();
+  setSwiper();
 }

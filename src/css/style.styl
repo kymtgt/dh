@@ -21,6 +21,7 @@
     transition-property all
     transition-duration .3s
     transform translateY(-100%)
+    background-color rgba(white, .9)
     &.on
       transform translateY(0%)
   .btn-cta
@@ -92,21 +93,24 @@
 
 .about-lead
   margin-em(2.5em)
-.about-feature-wrapper
+.about-feature-container
   width 100%
   position relative
   margin-bottom 2.5em
   clearfix()
   +sp-only()
-    overflow hidden
-    margin-bottom 0
-.about-feature-slide
-  +sp-only()
-    width 300%
+    display none
 
 .about-feature
   width 33.333%
   float left
+
+.swiper-container
+  width 100%
+.swiper-pagination-bullet
+  background black
+.swiper-pagination-bullet-active
+  background white
 
 +sp-only()
   #access
@@ -160,7 +164,6 @@
   background-size 400px auto
   +tablet-under()
     background-size 200px auto
-    background-position left 40px
   margin-top-large()
   padding-bottom-large()
   &:before
@@ -175,6 +178,11 @@
     border-right 50vw solid smoke
     border-bottom 40px solid smoke
     border-left 50vw solid white
+  +sp-only()
+    &:before
+      border-top-width 20px
+      border-bottom-width 20px
+  
 
 .table-figure
   width 22%
@@ -216,6 +224,10 @@
     border-right 50vw solid smoke
     border-bottom 40px solid white
     border-left 50vw solid white
+  +sp-only()
+    &:before
+      border-top-width 20px
+      border-bottom-width 20px
 
 .steps-wrapper
   counter-reset: steps;
@@ -262,13 +274,34 @@
     background-size (258px/2) auto
   padding-bottom-large()
 
-+pc-only()
-  .col-wrapper
+.ex-container
+  +tablet-under()
+    width 100vw
+    margin-left -5vw
+    margin-right -5vw
+    overflow-x scroll
+    -webkit-overflow-scrolling touch
+    overflow-scrolling touch
+
+.col-wrapper
+  +tablet-under()
+    white-space nowrap
+  +pc-only()
     margin-left -20px
     margin-right -20px
     margin-bottom -1.5em
     clearfix()
-  .col
+.col
+  +tablet-under()
+    display inline-block
+    width 90%
+    margin-left 5vw
+    vertical-align top
+    + .col
+      margin-left 2.5vw
+    &:last-child
+      margin-right 5vw
+  +pc-only()
     width 50%
     padding-left 20px
     padding-right 20px
@@ -290,6 +323,7 @@
     background rgba(255,255,255,.8)
     overflow hidden
     padding .5em 1.5em
+    white-space normal
 
 
 #bottom
@@ -337,4 +371,47 @@
   text-align center
   padding: 5em 0
   margin-top-large()
+
+.modal-cover
+  display none
+  position fixed
+  z-index 200
+  top 0
+  left 0
+  right 0
+  bottom 0
+  width 100%
+  height 100%
+  background rgba(0,0,0,.5)
+  overflow-y scroll
   
+.modal-wrapper
+  position relative
+  padding 2em 0
+
+.modal-content
+  width 64%
+  max-width 640px
+  background white
+  box-sizing border-box
+  padding 1em 2em
+  margin-left auto
+  margin-right auto
+  +sp-only()
+    width 90%
+    padding 1em 1em
+  
+#confirm
+  .label
+    line-height 1.5
+  input, textarea
+    line-height 1.5
+    background none
+    color black
+    border none
+    appearance none
+    height auto
+    padding 0
+    resize none
+    &:focus
+      outline none

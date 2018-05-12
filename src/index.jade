@@ -14,8 +14,9 @@ header#header.g-nav
 #hero
   .hero-inner
     h1
-      .ib 渋谷のクリエイティブの中心地で
-      .ib ワークショップを開催しませんか？
+      | 渋谷のクリエイティブの中心地で
+      br
+      | ワークショップを開催しませんか？
     img(src="./img/are_weekday_workshop.png" alt="Are Weekday Workshop" width="385")
     p
       | 渋谷のクリエイティビティの発信地、渋谷キャスト。
@@ -33,14 +34,23 @@ section#about
       br
       | 願いが込められています。
 
-  .about-feature-wrapper
-    .about-feature-slide
-      figure.about-feature
+  .about-feature-container
+    figure.about-feature
+      img(src="./img/image_shop1.jpg" alt="店舗の様子")
+    figure.about-feature
+      img(src="./img/image_shop2.jpg" alt="店舗の様子")
+    figure.about-feature
+      img(src="./img/image_shop3.jpg" alt="店舗の様子")
+
+  .swiper-container.sp-only
+    .swiper-wrapper
+      figure.swiper-slide
         img(src="./img/image_shop1.jpg" alt="店舗の様子")
-      figure.about-feature
+      figure.swiper-slide
         img(src="./img/image_shop2.jpg" alt="店舗の様子")
-      figure.about-feature
+      figure.swiper-slide
         img(src="./img/image_shop3.jpg" alt="店舗の様子")
+    .swiper-pagination
 
   #access
     #mapSP
@@ -52,9 +62,11 @@ section#about
         dl
           dt 住所
           dd
-            | 東京都渋谷区1-23-21　SHIBUYA CAST. 1階
+            | 東京都渋谷区1-23-21　
+            br.sp-only
+            | SHIBUYA CAST. 1階
             br
-            a(href="#") &gt; Google Mapでみる
+            a(href="https://goo.gl/maps/6fW4rRAwwJ82") &gt; Google Mapでみる
         dl
           dt TEL
           dd
@@ -64,13 +76,13 @@ section#about
           dd 8:00 〜 22:00
 
         .m2
-          a.icon-sns(href="")
+          a.icon-sns(href="https://www.facebook.com/are.tokyo/" target="_blank")
             img(src="./img/icon_fb.png" alt="facebook")
           | 　
-          a.icon-sns(href="")
+          a.icon-sns(href="https://www.instagram.com/cafe__are/" target="_blank")
             img(src="./img/icon_ig.png" alt="instagram")
           | 　
-          a.icon-sns(href="")
+          a.icon-sns(href="http://shibuyacast.jp/" target="_blank")
             img(src="./img/icon_cast.png" alt="shibuya cast")
 
 #smoke
@@ -140,44 +152,73 @@ section#steps
 section#example
   .content
     h2.section-heading これまでの開催事例
-    .col-wrapper.ex-wrapper
-      .col
-        figure.ex-figure(style="background-image:url(./img/image_example.jpg)")
-          figcaption
-            h3.m1
-              strong ボタニカルワックスバー作り
-            p.m1 「火を灯さないキャンドル」として注目されているボタニカルワックスバー作りのワークショップを開催しました
-      .col
-        figure.ex-figure(style="background-image:url(./img/image_example.jpg)")
-          figcaption
-            h3.m1
-              strong ボタニカルワックスバー作り
-            p.m1 「火を灯さないキャンドル」として注目されているボタニカルワックスバー作りのワークショップを開催しました
+    .ex-container
+      .col-wrapper
+        .col
+          figure.ex-figure(style="background-image:url(./img/image_example.jpg)")
+            figcaption
+              h3.m1
+                strong ボタニカルワックスバー作り
+              p.m1 「火を灯さないキャンドル」として注目されているボタニカルワックスバー作りのワークショップを開催しました
+        .col
+          figure.ex-figure(style="background-image:url(./img/image_example.jpg)")
+            figcaption
+              h3.m1
+                strong ボタニカルワックスバー作り
+              p.m1 「火を灯さないキャンドル」として注目されているボタニカルワックスバー作りのワークショップを開催しました
 
 #bottom
   section#contact
     .content
       h2.section-heading お問い合わせ
-      form.narrow-content
+      .narrow-content
+        .contact-row
+          label.label(for="contactName") お名前
+          .input
+            input#contactName(type="text" name="name" required)
+        .contact-row
+          label.label(for="contactEmail") メールアドレス
+          .input
+            input#contactEmail(type="email" name="email" required)
+        .contact-row
+          label.label(for="contactTel") 電話番号
+          .input
+            input#contactTel(type="tel" name="tel" required)
+        .contact-row
+          label.label(for="contactContent") お問い合わせ内容
+          .input
+            textarea#contactContent(name="content" placeholder="利用目的（ワークショップ内容）、開催予定時期などお決まりでしたらご記入ください" required)
+        .contact-row.text-center
+          button.btn.btn-lg(type="button" onclick="showModal()") 送信内容を確認
+      .m4.text-center.sp-only
+        a(href="#top" style="color:white") ▲ Back to top        
+
+  footer#footer.content
+    small &copy; &Aring;re
+
+.modal-cover
+  .modal-wrapper
+    .modal-content
+      h3.m2 ご入力内容をご確認ください。
+      form#confirm
         .contact-row
           label.label お名前
           .input
-            input(type="text" name="name")
+            input(type="text" name="name" required readonly)
         .contact-row
           label.label メールアドレス
           .input
-            input(type="email" name="email")
+            input(type="email" name="email" required readonly)
         .contact-row
           label.label 電話番号
           .input
-            input(type="tel" name="tel")
+            input(type="tel" name="tel" required readonly)
         .contact-row
           label.label お問い合わせ内容
           .input
-            textarea(name="content" placeholder="利用目的（ワークショップ内容）、開催予定時期などお決まりでしたらご記入ください")
+            textarea(name="content" placeholder="利用目的（ワークショップ内容）、開催予定時期などお決まりでしたらご記入ください" required readonly)
         .contact-row.text-center
-          button.btn.btn-lg(type="button") 送信内容を確認
-      .m4.text-center.sp-only
-        a(href="#top" style="color:white") ▲ Back to top
-  footer#footer.content
-    small &copy; &Aring;re
+          button#submit.btn.btn-primary.btn-lg(type='submit') この内容で送信
+          br
+          br
+          .ib.pointer(onclick="hideModal()") キャンセル
