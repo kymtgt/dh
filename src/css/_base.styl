@@ -1,0 +1,61 @@
+@import "_reset"
+
+body
+  color black
+  font-size 16px
+  line-height 1.5
+  -webkit-font-smoothing antialiased
+
+a
+  color primary
+
+img
+  max-width 100%
+  height auto
+  vertical-align top
+
+
+h1
+  font-size 40px
+  font-weight bold
+
+h2
+  font-size 32px
+  font-weight bold
+
+strong
+  font-weight bold
+
+table
+  border-top 2px solid primary
+  border-bottom 2px solid primary
+  width 100%
+  th, td
+    border none
+    padding-top (2em - .25em)
+    vertical-align middle
+  th
+    font-weight bold
+    text-align left
+  td
+    padding-left 2em
+  tr:last-child
+    > th, td
+      padding-bottom (2em - .25em)
+
+input[type='text'],
+input[type='email'],
+input[type='tel']
+  font-size 1em
+  height 48px
+  padding-left 1em
+  padding-right 1em
+  border 1px solid light
+  border-radius 5px
+  box-sizing border-box
+textarea
+  font-size 1em
+  padding .75em 1em
+  border 1px solid light
+  border-radius 5px
+  box-sizing border-box

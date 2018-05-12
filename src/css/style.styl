@@ -4,26 +4,244 @@ black = #1b1e20
 light = #d5dadc
 smoke = #f1f3f4
 
-html
-  background: primary
-
-body
-  background: primary
-  color: black
+@import '_mixins'
+@import '_base'
+@import '_modules'
 
 .g-nav
-  background: white
-  padding-left: 32px
-  padding-right: 32px
-  position: fixed
-  width: 100%
-  top: 0
-  left: 0
-  z-index: 100
+  background white
+  padding 22px 32px
+  position fixed
+  width 100%
+  box-sizing border-box
+  box-shadow rgba(0,0,0,.5) 0 4px 8px
+  top 0
+  left 0
+  z-index 100
+.g-nav-link
+  line-height 44px
+  text-decoration none
+  vertical-align top
+  margin-right 2em
 
 .g-nav-logo
-  fill: primary
-  width: 71px
+  fill primary
+  width 71px
+
+.hero
+  background url(../img/hero.jpg) no-repeat center center
+  background-size cover
+  width 100%
+  height 960px
+  position relative
+
+.hero-inner
+  max-width 90%
+  color white
+  display block
+  position relative
+  top 50%
+  left 50%
+  text-align center
+  transform translate(-50%, -50%)
+  z-index 2
+  text-shadow: rgba(0,0,0,.3) 0 0 5px
+  > h1
+    font-size 32px
+    line-height 42px
+    margin-bottom 40px
+    letter-spacing .13em
+  > p
+    font-size 20px
+    line-height 36px
+    margin-top: 40px
 
 
-@import '_btn'
+#about
+  background url(../img/bg_about.png) no-repeat right top
+
+.about-lead
+  margin-em(2.5em)
+.about-feature
+  width 100%
+  position relative
+  margin-bottom 40px
+  clearfix()
+
+.about-feature-image
+  width 33.333%
+  float left
+
+.access-info
+  position absolute
+  z-index 2
+  background rgba(255,255,255,.8)
+  padding 0 1.5em
+  top 46px
+  left 48px
+  > dl
+    margin-em(2em)
+    clearfix()
+    > dt, dd
+      float left
+    > dt
+      width 5em
+.icon-sns
+  display inline-block
+  vertical-align top
+  > img
+    height 40px
+
+#smoke
+  position relative
+  background smoke url(../img/bg_guidelines.png) no-repeat left 80px
+  background-size 400px auto
+  margin-top 160px
+  padding-bottom 160px
+  &:before
+    content ''
+    display block
+    width 0
+    height 0
+    position absolute
+    top 0
+    left 0
+    border-top 40px solid white
+    border-right 50vw solid smoke
+    border-bottom 40px solid smoke
+    border-left 50vw solid white
+
+.table-figure
+  width 220px
+  height 220px
+  background no-repeat center center
+  background-size cover
+  position absolute
+  bottom 0
+  &.fr
+    right 32px
+  &.fl
+    left 32px
+  
+
+#steps
+  position relative
+  &:before
+    content ''
+    display block
+    width 0
+    height 0
+    position absolute
+    top 0
+    left 0
+    border-top 40px solid smoke
+    border-right 50vw solid smoke
+    border-bottom 40px solid white
+    border-left 50vw solid white
+
+.steps-wrapper
+  counter-reset: steps;
+
+.step
+  position relative
+  padding-top 1.5em
+  padding-left 54px
+  margin-top 2em
+  &:before
+    counter-increment steps
+    content counter(steps)
+    display block
+    position absolute
+    font-size 35px
+    font-family 'Helvetica Neue', Helvetica, Arial
+    font-weight bold
+    left 20px
+    top 1em
+    color primary
+    width 20px
+    text-align center
+    line-height 1
+    z-index 2
+  > h3, p
+    position relative
+    z-index 3
+  > h3
+    font-weight bold
+    margin-em(1.5em)
+.step-bg
+  fill light
+  z-index 1
+  position absolute
+  left 0
+  top 0
+  width 130px
+
+#example
+  position relative
+  background url(../img/bg_example.png) no-repeat right bottom
+  background-size 258px auto
+  padding-bottom 160px
+
+.col-wrapper
+  margin-left -20px
+  margin-right -20px
+  clearfix()
+.col
+  width 50%
+  padding-left 20px
+  padding-right 20px
+  box-sizing border-box
+  float left
+
+.ex-figure
+  display block
+  background no-repeat center center
+  background-size cover
+  border-radius 5px
+  position relative
+  overflow hidden
+  padding-bottom (36000/480)%
+  > figcaption
+    position absolute
+    bottom 0
+    background rgba(255,255,255,.8)
+    overflow hidden
+    padding .5em 1.5em
+
+
+#bottom
+  position relative
+  background primary url(../img/bg_footer.png) no-repeat right bottom
+  background-size 494px auto
+  color white
+
+#contact
+  position relative
+  background url(../img/bg_contact.png) no-repeat left top
+  background-size auto 72px
+
+.contact-row
+  margin-top 2em
+  margin-bottom 2em
+  position relative
+  clearfix()
+.label
+  float left
+  font-weight bold
+  line-height 48px
+  text-align right
+  width 8em
+  padding-right 2em
+.input
+  padding-left 10em
+  > input, > textarea
+    width 100%
+  > textarea
+    height 10em
+
+#footer
+  border-top 4px solid white
+  text-align center
+  padding: 5em 0
+  margin-top 10em
+  
