@@ -28,11 +28,7 @@ section#about
   .content
     h2.section-heading &Aring;reについて
     p.about-lead
-      | オーレはスウェーデンにあるスキーリゾート地の名前。ゲレンデを真っ白なキャンバスに見立てて、それぞれのクリエイターがスラローム
-      br
-      | を描き、その軌跡が作品となって、日々記憶に残っていく。そんなことを積み重ねて、みんなが主役になれるカフェに育ってほしいという
-      br
-      | 願いが込められています。
+      | オーレはスウェーデンにあるスキーリゾート地の名前。ゲレンデを真っ白なキャンバスに見立てて、それぞれのクリエイターがスラロームを描き、その軌跡が作品となって、日々記憶に残っていく。そんなことを積み重ねて、みんなが主役になれるカフェに育ってほしいという願いが込められています。
 
   .about-feature-container
     figure.about-feature
@@ -51,6 +47,8 @@ section#about
       figure.swiper-slide
         img(src="./img/image_shop3.jpg" alt="店舗の様子")
     .swiper-pagination
+    .swiper-button-next
+    .swiper-button-prev
 
   #access
     #mapSP
@@ -89,9 +87,9 @@ section#about
   section#guidelines.content.clearfix
     .narrow-content.fl
       h2.section-heading 募集要項
-      table
+      table.table-details
         tr
-          th(width=64) ジャンル
+          th ジャンル
           td フラワーアレンジメントや、アクセサリー作り、イラスト講座など
         tr
           th 時間
@@ -101,15 +99,18 @@ section#about
           td 最大8名（講師含む）
         tr
           th 参加料金
-          td お一人様ワンドリンク以上のオーダー（講師含む）
+          td
+            | お一人様ワンドリンク以上のオーダー（講師含む）
+            br
+            small ※ドリンク 300円〜
     figure.table-figure.fr(style="background-image:url(./img/image_guidelines.jpg)")
 
   section#spec.content.clearfix
     .narrow-content.fr
       h2.section-heading 仕様・設備
-      table
+      table.table-details
         tr
-          th(width=64) スペース
+          th スペース
           td 2m × 2m のテーブルスペース
         tr
           th 提供備品

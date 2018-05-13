@@ -114,9 +114,16 @@
 .swiper-container
   width 100%
 .swiper-pagination-bullet
-  background black
+  background white
 .swiper-pagination-bullet-active
   background white
+.swiper-button-next
+  background url(../img/arrows.svg) no-repeat right center
+  background-size 54px 44px
+
+.swiper-button-prev
+  background url(../img/arrows.svg) no-repeat left center
+  background-size 54px 44px
 
 +sp-only()
   #access
@@ -188,7 +195,10 @@
     &:before
       border-top-width 20px
       border-bottom-width 20px
-  
+
+.table-details
+  th
+    width 4em
 
 .table-figure
   width 22%
