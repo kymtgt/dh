@@ -75,15 +75,21 @@
   > h1
     font-size 2em
     line-height (42/32)
-    margin-bottom (40em/32)
+    margin-bottom: (40em/32)
     letter-spacing .13em
+    +sp-only()
+      margin-left -5vw
+      margin-right -5vw
+      font-size 1.333em
   > p
     font-size (20/16)em
     line-height (36/20)
     margin-top: (40em/20)
     +tablet-under()
       text-align left
-      
+    +sp-only()
+      font-size 1.2em
+
 
 #about
   background url(../img/bg_about.png) no-repeat right top
