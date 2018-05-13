@@ -6,9 +6,13 @@ html
     title 渋谷のクリエイティブの中心地でワークショップを開催しませんか？
     meta(name="description" content="渋谷のクリエイティビティの発信地、渋谷キャスト。その一角であるカフェ「&Aring;re（オーレ）」では、少人数制のワークショップ講師を募集しています。")
     link(rel="stylesheet" href="./css/style.css")
-    script(src="./js/plugin/jquery.min.js" preload)
-    script(src="./js/plugin/swiper.min.js" preload)
-    script(src="./js/script.js" preload)
+    link(rel="preload" href="./js/plugin/jquery.min.js" as="script")
+    link(rel="preload" href="./js/plugin/swiper.min.js" as="script")
+    link(rel="preload" href="./js/script.js" as="script")
+    link(rel="preload" href="./img/hero.jpg" as="image")
+    script(src="./js/plugin/jquery.min.js")
+    script(src="./js/plugin/swiper.min.js")
+    script(src="./js/script.js")
   body(onload="init()")
     != yield
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8K3-EYzv_vkd_Dw-yHFIGQcctp4ht-Cs&callback=initMap")
