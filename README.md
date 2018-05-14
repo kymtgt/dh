@@ -22,12 +22,21 @@ https://paper.dropbox.com/doc/20180415-NwxlM9s0Uo5FVqQkudqDL
 https://paper.dropbox.com/doc/20180429-lsSua25ETrOSVyjlEGRee?_tk=share_copylink
 
 ## 第四回(5/13) 発表
-デザインデータfix docs/4/design.png
+### デザインデータfix
+docs/4/design.png
+
 ![https://github.com/kymtgt/dh/blob/master/docs/4/design.png?raw=true](https://github.com/kymtgt/dh/blob/master/docs/4/design.png?raw=true)
-コーディング https://github.com/kymtgt/dh/tree/master/src/
+
+### コーディング
+https://github.com/kymtgt/dh/tree/master/src/
+
+harpで作成
+
 ### アップ先
 http://dh.tsugu.to/
+
 id: are / pw: cast
+
 ### 授業note
 https://paper.dropbox.com/doc/20180513-rCDPCgXXilUwFxxx1u7Qe?_tk=share_copylink
 
